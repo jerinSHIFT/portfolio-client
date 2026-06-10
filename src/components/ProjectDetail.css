@@ -1,0 +1,133 @@
+.project-detail {
+  padding: 100px 0 60px;
+  min-height: 100vh;
+}
+
+.pd-back {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.pd-header {
+  max-width: 720px;
+}
+
+.pd-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.pd-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pd-tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.pd-year {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.pd-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.pd-lead {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.pd-live-btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 13px;
+  border-radius: var(--radius);
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pd-live-btn:hover {
+  background: var(--accent);
+  color: #0f0f0f;
+}
+
+.pd-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 48px 0;
+}
+
+.pd-body {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 700px;
+}
+
+.pd-section-heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.pd-section-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.pd-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.pd-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+  top: 3px;
+}

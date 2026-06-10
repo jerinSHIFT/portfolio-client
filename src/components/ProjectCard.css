@@ -1,0 +1,139 @@
+.project-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-card-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 160px;
+}
+
+.project-meta-left {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-number {
+  display: block;
+  padding: 12px 16px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-img-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.project-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.project-card:hover .project-img-wrap img {
+  transform: scale(1.04);
+}
+
+.project-img-placeholder {
+  width: 100%;
+  height: 120px;
+  background: var(--surface);
+}
+
+.project-info {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-num-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.project-live-link {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.project-live-link:hover {
+  color: var(--accent-hover);
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.project-year {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .project-card-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-img-wrap {
+    height: 160px;
+  }
+}

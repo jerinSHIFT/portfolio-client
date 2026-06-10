@@ -1,0 +1,217 @@
+/* ── Online Book Ordering ── */
+.bo-page { min-height:100vh; padding:110px 0 60px; }
+.bo-back { display:inline-block; font-size:13px; color:var(--text-muted); margin-bottom:32px; transition:color .2s; }
+.bo-back:hover { color:var(--accent); }
+
+/* HERO */
+.bo-hero { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; padding-bottom:48px; border-bottom:1px solid var(--border); margin-bottom:32px; flex-wrap:wrap; }
+.bo-badge { display:inline-block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; border-radius:20px; margin-bottom:20px; }
+.bo-title { font-family:var(--font-display); font-size:clamp(36px,5.5vw,62px); font-weight:400; line-height:1.1; margin-bottom:16px; }
+.bo-title em { color:var(--accent); font-style:italic; }
+.bo-lead { font-size:15px; color:var(--text-secondary); line-height:1.75; max-width:520px; margin-bottom:28px; }
+.bo-hero-stats { display:flex; gap:36px; }
+.bo-hero-stats > div { display:flex; flex-direction:column; }
+.bo-hero-stats span { font-size:26px; font-family:var(--font-display); color:var(--text-primary); }
+.bo-hero-stats p { font-size:12px; color:var(--text-muted); letter-spacing:.06em; }
+
+/* CART FAB */
+.bo-cart-fab {
+  position:relative;
+  padding:13px 22px;
+  background:var(--accent);
+  color:#0f0f0f;
+  font-size:14px; font-weight:600;
+  border:none; border-radius:var(--radius);
+  cursor:pointer;
+  white-space:nowrap;
+  align-self:flex-start;
+  transition:background .2s;
+  font-family:var(--font-body);
+}
+.bo-cart-fab:hover { background:var(--accent-hover); }
+.bo-cart-badge {
+  position:absolute; top:-8px; right:-8px;
+  width:22px; height:22px;
+  background:#ff4444; color:#fff;
+  border-radius:50%; font-size:12px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700;
+}
+
+/* CONTROLS */
+.bo-controls { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.bo-search {
+  flex:1; min-width:200px; max-width:400px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:11px 16px;
+  color:var(--text-primary); font-family:var(--font-body); font-size:14px;
+  transition:border-color .2s;
+}
+.bo-search:focus { outline:none; border-color:var(--accent); }
+.bo-search::placeholder { color:var(--text-muted); }
+.bo-sort {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:11px 14px;
+  color:var(--text-primary); font-family:var(--font-body); font-size:13px;
+  cursor:pointer;
+}
+.bo-sort:focus { outline:none; border-color:var(--accent); }
+
+.bo-cats { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+.bo-cat-btn {
+  font-size:12px; padding:6px 14px;
+  border:1px solid var(--border); border-radius:20px;
+  background:transparent; color:var(--text-secondary); cursor:pointer; transition:all .2s;
+}
+.bo-cat-btn:hover, .bo-cat-btn.active { background:var(--accent); border-color:var(--accent); color:#0f0f0f; }
+
+.bo-count { font-size:12px; color:var(--text-muted); margin-bottom:20px; letter-spacing:.04em; }
+
+/* BOOKS GRID */
+.bo-books-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
+.bo-book-card {
+  border:1px solid var(--border); border-radius:6px; overflow:hidden;
+  transition:border-color .2s, transform .2s;
+  display:flex; flex-direction:column;
+}
+.bo-book-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+.bo-book-cover {
+  height:160px;
+  background:linear-gradient(135deg, var(--surface) 0%, #1e1e1e 100%);
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.bo-book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.bo-book-card:hover .bo-book-cover-img { transform: scale(1.05); }
+.bo-book-initials { font-size:28px; font-family:var(--font-display); color:var(--text-muted); }
+.bo-book-tag {
+  position:absolute; top:10px; right:10px;
+  font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+  padding:2px 8px; border-radius:20px; border:1px solid;
+}
+.bo-book-info { padding:16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.bo-book-cat { font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+.bo-book-title { font-size:15px; font-weight:500; color:var(--text-primary); line-height:1.3; }
+.bo-book-author { font-size:12px; color:var(--text-muted); }
+.bo-book-meta { display:flex; gap:12px; }
+.bo-book-meta span { font-size:12px; color:var(--text-secondary); }
+.bo-book-footer { display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:10px; }
+.bo-book-price { font-size:16px; font-weight:600; color:var(--accent); font-family:var(--font-display); }
+.bo-add-btn {
+  font-size:12px; padding:7px 12px;
+  background:transparent; border:1px solid var(--accent); color:var(--accent);
+  border-radius:var(--radius); cursor:pointer; transition:all .2s;
+  font-family:var(--font-body);
+}
+.bo-add-btn:hover { background:var(--accent); color:#0f0f0f; }
+
+/* NO RESULTS */
+.bo-no-results { text-align:center; padding:60px 20px; }
+.bo-no-results p { font-size:16px; color:var(--text-secondary); margin-bottom:20px; }
+
+/* BUTTONS */
+.bo-btn-primary {
+  display:inline-block; width:100%;
+  padding:12px 24px; background:var(--accent); color:#0f0f0f;
+  font-size:14px; font-weight:500; border:none; border-radius:var(--radius);
+  cursor:pointer; font-family:var(--font-body); transition:background .2s; text-align:center;
+}
+.bo-btn-primary:hover { background:var(--accent-hover); }
+.bo-btn-outline {
+  display:inline-block; padding:10px 22px;
+  border:1px solid var(--border); color:var(--text-secondary);
+  font-size:13px; border-radius:var(--radius); cursor:pointer;
+  font-family:var(--font-body); transition:all .2s; background:transparent;
+}
+.bo-btn-outline:hover { border-color:var(--text-primary); color:var(--text-primary); }
+
+/* DRAWER */
+.bo-drawer-overlay {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.6); backdrop-filter:blur(4px);
+  z-index:200;
+  display:flex; justify-content:flex-end;
+}
+.bo-drawer {
+  width:100%; max-width:420px;
+  background:var(--bg-2); border-left:1px solid var(--border);
+  height:100vh; overflow-y:auto;
+  display:flex; flex-direction:column;
+  animation: slide-in .25s ease;
+}
+@keyframes slide-in { from{transform:translateX(100%)} to{transform:translateX(0)} }
+.bo-drawer-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 24px; border-bottom:1px solid var(--border);
+  position:sticky; top:0; background:var(--bg-2); z-index:1;
+}
+.bo-drawer-header h3 { font-size:16px; font-weight:500; }
+.bo-drawer-header button { background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer; }
+.bo-cart-items { flex:1; padding:16px 24px; display:flex; flex-direction:column; gap:14px; }
+.bo-cart-item { display:flex; gap:14px; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid var(--border-light); }
+.bo-cart-book-cover {
+  width:52px; height:68px; border-radius:3px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-family:var(--font-display); color:var(--text-muted);
+  border:1px solid var(--border);
+}
+.bo-cart-info { flex:1; }
+.bo-cart-title { font-size:14px; font-weight:500; margin-bottom:2px; }
+.bo-cart-author { font-size:12px; color:var(--text-muted); margin-bottom:8px; }
+.bo-cart-qty-row { display:flex; align-items:center; gap:10px; }
+.bo-cart-qty-row button {
+  width:28px; height:28px; border:1px solid var(--border); background:var(--surface);
+  color:var(--text-primary); border-radius:4px; cursor:pointer; font-size:16px;
+  display:flex; align-items:center; justify-content:center; transition:border-color .2s;
+}
+.bo-cart-qty-row button:hover { border-color:var(--accent); }
+.bo-cart-qty-row span { font-size:14px; min-width:20px; text-align:center; }
+.bo-cart-right { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.bo-cart-price { font-size:15px; font-weight:600; color:var(--accent); }
+.bo-cart-remove { background:none; border:none; color:var(--text-muted); font-size:14px; cursor:pointer; transition:color .2s; }
+.bo-cart-remove:hover { color:#ff4444; }
+.bo-cart-total {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 24px; border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  font-size:15px;
+}
+.bo-cart-total strong { font-size:18px; color:var(--accent); }
+
+/* CHECKOUT */
+.bo-checkout-form { padding:20px 24px; display:flex; flex-direction:column; gap:12px; }
+.bo-checkout-form h4 { font-size:14px; font-weight:500; margin-bottom:4px; }
+.bo-checkout-form input {
+  width:100%; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:10px 14px;
+  color:var(--text-primary); font-family:var(--font-body); font-size:14px;
+}
+.bo-checkout-form input:focus { outline:none; border-color:var(--accent); }
+.bo-checkout-form input::placeholder { color:var(--text-muted); }
+
+/* CART EMPTY */
+.bo-cart-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:40px; text-align:center; }
+.bo-cart-empty p:first-child { font-size:40px; }
+.bo-cart-empty p { color:var(--text-secondary); }
+
+/* ORDER SUCCESS */
+.bo-order-success { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:40px; text-align:center; }
+.bo-success-icon {
+  width:60px; height:60px; border-radius:50%;
+  background:var(--accent-dim); border:1px solid var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px; color:var(--accent);
+}
+.bo-order-success h3 { font-size:22px; font-family:var(--font-display); }
+.bo-order-success p { font-size:14px; color:var(--text-secondary); }
+.bo-success-addr { color:var(--text-primary) !important; font-weight:500; }
+.bo-success-total { color:var(--accent) !important; font-size:18px !important; font-weight:600; }
+
+@media(max-width:600px){
+  .bo-books-grid { grid-template-columns:repeat(2,1fr); }
+  .bo-drawer { max-width:100%; }
+}

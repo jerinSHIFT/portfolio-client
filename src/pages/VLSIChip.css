@@ -1,0 +1,182 @@
+/* ── VLSI Chip Design ── */
+.vlsi-page { min-height: 100vh; padding: 110px 0 60px; }
+.vlsi-back { display:inline-block; font-size:13px; color:var(--text-muted); margin-bottom:32px; transition:color .2s; }
+.vlsi-back:hover { color:var(--accent); }
+
+/* HERO */
+.vlsi-hero { display:grid; grid-template-columns:1fr 380px; gap:60px; align-items:center; margin-bottom:0; padding-bottom:60px; border-bottom:1px solid var(--border); }
+.vlsi-badge { display:inline-block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; border-radius:20px; margin-bottom:20px; }
+.vlsi-title { font-family:var(--font-display); font-size:clamp(40px,6vw,68px); font-weight:400; line-height:1.1; margin-bottom:18px; }
+.vlsi-title em { color:var(--accent); font-style:italic; }
+.vlsi-lead { font-size:15px; color:var(--text-secondary); line-height:1.75; margin-bottom:32px; }
+.vlsi-stats-row { display:flex; gap:36px; }
+.vlsi-stats-row > div { display:flex; flex-direction:column; }
+.vlsi-stats-row span { font-size:26px; font-family:var(--font-display); color:var(--text-primary); }
+.vlsi-stats-row p { font-size:12px; color:var(--text-muted); letter-spacing:.06em; }
+
+/* CHIP ART */
+.vlsi-chip-art { display:flex; flex-direction:column; align-items:center; gap:16px; }
+.vlsi-chip-outer { position:relative; width:200px; height:200px; display:flex; align-items:center; justify-content:center; }
+.vlsi-chip-inner {
+  width:160px; height:160px;
+  background:linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border:2px solid var(--accent);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+  box-shadow:0 0 30px rgba(168,255,120,0.15);
+}
+.vlsi-chip-core { text-align:center; }
+.vlsi-chip-core span { display:block; font-size:20px; font-family:var(--font-display); color:var(--accent); }
+.vlsi-chip-sub { font-size:11px !important; color:var(--text-muted) !important; letter-spacing:.08em; }
+.vlsi-chip-glow {
+  position:absolute; inset:-20px;
+  background:radial-gradient(circle, rgba(168,255,120,0.08) 0%, transparent 70%);
+  border-radius:50%;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+@keyframes pulse-glow { 0%,100%{opacity:.5} 50%{opacity:1} }
+
+/* Pins */
+.vlsi-pin {
+  position:absolute;
+  width:16px; height:6px;
+  background:var(--accent);
+  border-radius:2px;
+}
+.pin-0 { top:-6px; left:30px; }
+.pin-1 { top:-6px; left:60px; }
+.pin-2 { bottom:-6px; left:30px; }
+.pin-3 { bottom:-6px; left:60px; }
+.pin-4 { left:-6px; top:30px; width:6px; height:16px; }
+.pin-5 { left:-6px; top:60px; width:6px; height:16px; }
+.pin-6 { right:-6px; top:30px; width:6px; height:16px; }
+.pin-7 { right:-6px; top:60px; width:6px; height:16px; }
+
+.vlsi-chip-grid { display:grid; grid-template-columns:repeat(8,1fr); gap:3px; width:200px; }
+.vlsi-grid-cell {
+  width:100%; aspect-ratio:1;
+  background:var(--surface);
+  border:1px solid var(--border-light);
+  border-radius:1px;
+  animation: cell-blink 4s ease-in-out infinite;
+}
+@keyframes cell-blink { 0%,100%{background:var(--surface)} 50%{background:rgba(168,255,120,0.08)} }
+
+/* SECTIONS */
+.vlsi-section { padding:64px 0; border-top:1px solid var(--border); }
+.vlsi-eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.vlsi-section-title { font-family:var(--font-display); font-size:clamp(26px,3.5vw,40px); font-weight:400; margin-bottom:36px; }
+
+/* TOOLS */
+.vlsi-tools { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.vlsi-tool-card {
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  display:flex; flex-direction:column; gap:8px;
+  transition:border-color .2s, background .2s;
+}
+.vlsi-tool-card:hover { border-color:var(--tc,var(--accent)); background:rgba(168,255,120,0.03); }
+.vlsi-tool-name { font-size:18px; font-weight:600; color:var(--tc,var(--accent)); }
+.vlsi-tool-role { font-size:12px; color:var(--text-muted); line-height:1.5; }
+
+/* WAVEFORM */
+.vlsi-waveform-wrap {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+  overflow:hidden;
+  font-family: monospace;
+}
+.vlsi-waveform-header {
+  display:grid; grid-template-columns:80px 1fr 1fr 1fr 1fr;
+  padding:10px 16px;
+  border-bottom:1px solid var(--border);
+  font-size:11px; color:var(--text-muted); letter-spacing:.06em;
+}
+.vlsi-waveform-row {
+  display:flex; align-items:stretch;
+  border-bottom:1px solid var(--border-light);
+}
+.vlsi-waveform-row:last-child { border-bottom:none; }
+.vlsi-waveform-label {
+  width:80px; flex-shrink:0;
+  padding:12px 16px;
+  font-size:13px; color:var(--accent);
+  border-right:1px solid var(--border);
+  display:flex; align-items:center;
+}
+.vlsi-waveform-track { flex:1; display:flex; align-items:center; }
+.vlsi-bit { height:32px; transition:background .1s; }
+.vlsi-bit.high { background:var(--accent); opacity:.85; }
+.vlsi-bit.low { background:var(--surface); border-top:2px solid var(--border); }
+
+/* CIRCUITS */
+.vlsi-circuits-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.vlsi-circuit-card {
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:22px;
+  cursor:pointer;
+  transition:border-color .2s;
+}
+.vlsi-circuit-card:hover, .vlsi-circuit-card.expanded { border-color:var(--accent); }
+.vlsi-circuit-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; gap:12px; }
+.vlsi-circuit-type { font-size:11px; color:var(--text-muted); letter-spacing:.06em; text-transform:uppercase; }
+.vlsi-circuit-name { font-size:18px; font-family:var(--font-display); color:var(--text-primary); margin-top:4px; }
+.vlsi-circuit-meta { display:flex; flex-direction:column; gap:4px; text-align:right; }
+.vlsi-circuit-meta span { font-size:12px; color:var(--text-secondary); }
+.vlsi-expand-btn {
+  background:none; border:1px solid var(--border); color:var(--accent);
+  font-size:12px; padding:6px 14px; border-radius:var(--radius);
+  cursor:pointer; margin-top:12px; transition:all .2s;
+}
+.vlsi-expand-btn:hover { background:var(--accent-dim); }
+.vlsi-circuit-detail { padding-top:16px; border-top:1px solid var(--border-light); margin-top:12px; }
+.vlsi-circuit-detail p { font-size:14px; color:var(--text-secondary); line-height:1.65; margin-bottom:16px; }
+.vlsi-circuit-specs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+.vlsi-circuit-specs > div { background:var(--bg); border:1px solid var(--border-light); border-radius:4px; padding:10px 12px; }
+.vlsi-circuit-specs span { font-size:11px; color:var(--text-muted); display:block; margin-bottom:3px; }
+.vlsi-circuit-specs strong { font-size:14px; color:var(--text-primary); }
+
+/* LAYOUT PREVIEW */
+.vlsi-layout-preview { background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:14px; }
+.vlsi-layout-label { font-size:11px; color:var(--text-muted); letter-spacing:.06em; margin-bottom:10px; }
+.vlsi-layout-blocks { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+.vlsi-block {
+  width:22px; height:28px; border-radius:2px;
+  animation: fade-in-block .4s ease forwards;
+  opacity:0;
+}
+.vlsi-block.pmos { background:rgba(74,158,255,0.5); border:1px solid #4a9eff; }
+.vlsi-block.nmos { background:rgba(255,159,74,0.5); border:1px solid #ff9f4a; }
+@keyframes fade-in-block { to { opacity:1; } }
+.vlsi-layout-legend { display:flex; gap:14px; font-size:11px; color:var(--text-muted); align-items:center; }
+.pmos-dot, .nmos-dot { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:4px; }
+.pmos-dot { background:#4a9eff; }
+.nmos-dot { background:#ff9f4a; }
+
+/* FLOW */
+.vlsi-flow { display:flex; flex-direction:column; gap:0; }
+.vlsi-flow-step {
+  display:grid; grid-template-columns:60px 1fr;
+  gap:20px; padding:20px 0;
+  border-bottom:1px solid var(--border-light);
+  align-items:start;
+}
+.vlsi-flow-step:last-child { border-bottom:none; }
+.vlsi-flow-num { font-size:28px; font-family:var(--font-display); color:var(--accent); }
+.vlsi-flow-step h4 { font-size:16px; font-weight:500; margin-bottom:4px; }
+.vlsi-flow-step p { font-size:13px; color:var(--text-secondary); }
+
+@media(max-width:900px){
+  .vlsi-hero { grid-template-columns:1fr; }
+  .vlsi-chip-art { display:none; }
+  .vlsi-tools { grid-template-columns:1fr 1fr; }
+  .vlsi-circuits-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px){
+  .vlsi-tools { grid-template-columns:1fr; }
+  .vlsi-stats-row { flex-wrap:wrap; gap:20px; }
+}
