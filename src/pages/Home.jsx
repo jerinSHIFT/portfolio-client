@@ -263,7 +263,7 @@ export default function Home() {
               <div>
                 <p className="contact-info-label">Socials</p>
                 <div className="contact-socials">
-                  <a href="https://linkedin.com/in/jerin-kabir" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                  <a href="https://www.linkedin.com/in/jerin-kabir-4b5a61201" target="_blank" rel="noreferrer">LinkedIn ↗</a>
                   <a href="https://github.com/jerinSHIFT" target="_blank" rel="noreferrer">GitHub ↗</a>
                 </div>
               </div>
