@@ -46,6 +46,26 @@ const projects = [
     slug: '/book-ordering',
     imgSrc: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80',
   },
+  {
+    number: 5,
+    title: 'ERP System',
+    liveUrl: null,
+    tags: ['Full Stack', 'Enterprise Software'],
+    description: 'A unified ERP dashboard managing inventory, purchase orders, HR & payroll, and revenue analytics — with live restocking, low-stock alerts, and financial charts.',
+    year: '2026',
+    slug: '/erp-system',
+    imgSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+  },
+  {
+    number: 6,
+    title: 'CRM System',
+    liveUrl: null,
+    tags: ['Full Stack', 'Sales & CRM'],
+    description: 'A visual CRM with a drag-and-drop sales pipeline, contact management, deal tracking, and an activity feed — built to manage leads from first contact to closed deal.',
+    year: '2026',
+    slug: '/crm-system',
+    imgSrc: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+  },
 ]
 
 const stack = [
@@ -138,7 +158,7 @@ export default function Home() {
       <div className="workspace-img-wrap">
         <div className="container">
           <img
-            src="https://preview--jerin-builds-magic.lovable.app/assets/workspace-BrXccjU0.jpg"
+            src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1200&q=80"
             alt="Jerin's workspace"
             className="workspace-img"
           />

@@ -16,7 +16,7 @@ export default function ContactForm() {
     setStatus('loading')
     setErrorMsg('')
     try {
-      await axios.post('/api/contact', form)
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, form)
       setStatus('success')
       setForm({ name: '', email: '', message: '' })
     } catch (err) {
