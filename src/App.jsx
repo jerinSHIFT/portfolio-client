@@ -6,6 +6,7 @@ import SmartGlass from './pages/SmartGlass'
 import BookOrdering from './pages/BookOrdering'
 import ERPSystem from './pages/ERPSystem'
 import CRMSystem from './pages/CRMSystem'
+import WordPress from './pages/WordPress'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/book-ordering" element={<BookOrdering />} />
         <Route path="/erp-system" element={<ERPSystem />} />
         <Route path="/crm-system" element={<CRMSystem />} />
+        <Route path="/wordpress-oribuild" element={<WordPress />} />
       </Routes>
     </Router>
   )
