@@ -74,7 +74,7 @@ const projects = [
     description: 'A fully custom WordPress website built for Oribuild — custom theme, responsive design, SEO-friendly structure, and an easy-to-manage admin dashboard.',
     year: '2026',
     slug: '/wordpress-oribuild',
-    imgSrc: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
+    imgSrc: '/oribuild-cover.png',
   },
 ]
 
