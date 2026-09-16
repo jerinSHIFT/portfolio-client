@@ -66,6 +66,16 @@ const projects = [
     slug: '/crm-system',
     imgSrc: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
   },
+    {
+    number: 7,
+    title: 'Oribuild — WordPress Website',
+    liveUrl: 'https://oribuild.com/',
+    tags: ['WordPress', 'Business Website'],
+    description: 'A fully custom WordPress website built for Oribuild — custom theme, responsive design, SEO-friendly structure, and an easy-to-manage admin dashboard.',
+    year: '2026',
+    slug: '/wordpress-oribuild',
+    imgSrc: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
+  },
 ]
 
 const stack = [
